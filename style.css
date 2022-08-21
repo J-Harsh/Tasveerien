@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+
+:root
+{
+    --base: 0.6rem;
+    scroll-behavior: smooth;
+}
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;;
+}
+
+a 
+{
+    text-decoration: none;
+}
+
+.header-section
+{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url("img/bg.png") no-repeat center;
+    background-size: cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.logo
+{
+    font-weight: 400;
+    font-size: 80px;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+.logo span img
+{
+    width: 60px;
+    margin-top: 30px;
+}
+
+.sub-line
+{
+    color: whitesmoke;
+    padding:  20px 0px 30px 0px;
+    font-size: 20px;
+    text-transform: capitalize;
+    word-spacing: 2px;
+    position: relative;
+    font-weight: 300;
+}
+
+.sub-line::after
+{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: whitesmoke;
+}
+
+.sub-line::before
+{
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 10px;
+    background: whitesmoke;
+    border-radius: 50%;
+}
+
+.search-box
+{
+    display: block;
+    margin: 60px auto 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.search-btn
+{
+    padding: 10px 30px;
+    border-radius: 5px;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #0a1130;
+    color: white;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.header-content h4
+{
+    margin-top: 64px;
+    color: #0a1130;
+    font-weight: 400;
+    background: whitesmoke;
+    border: 1px solid whitesmoke;
+    padding: 10px 5px;
+    border-radius: 10px;
+}
+
+.gallery
+{
+    display: grid;
+    width: 100%;
+    padding: 40px;
+    background: white;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    
+}
+
+.gallery.flex
+{
+    display: flex;
+}
+
+.gallery h2 
+{
+    margin: 0px auto;
+    font-weight: 400;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.gallery-img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #f9f9f9;
+    transition: all 250ms ease-in-out;
+}
+
+.gallery-img:hover
+{
+    transform: scale(1.01);
+    box-shadow: rgba(0, 0, 0, 0.4) 5px 5px, rgba(0, 0, 0, 0.3) 10px 10px, rgba(0, 0, 0, 0.2) 15px 15px ;
+    
+}
+
+
+
+/* image popup */
+.image-popup
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 80%;
+    height: 80vh;
+    background: white;
+    box-shadow: 0px 5px 50px rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    transition:  all 500ms;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    z-index: 1;
+}
+
+.hide
+{
+    display: none;
+    opacity: 0;
+}
+
+.image-popupe > *
+{
+    display: none;
+    opacity: 0;
+}
+
+.close-btn 
+{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 28px;
+    height: 28px;
+    background: url("img/close.png") no-repeat center;
+    background-size: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+}
+
+.view-btn
+{
+    text-transform: capitalize;
+    padding: 10px 20px;
+    background: #192f2e;
+    color: whitesmoke;
+    text-decoration: none;
+    text-transform: capitalize;
+    border-radius: 5px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.large-img 
+{
+    height: 80%;
+    width: auto;
+    max-width: 80%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.controls
+{
+    text-decoration: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    transition: all 500ms ease-in-out;
+}
+
+.controls :hover
+{
+    transition: all 250ms ease-in-out;
+    transform: scale(1.15);
+}
+
+.controls img
+{
+    width: 36px;
+}
+
+.controls.pre-btn
+{
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    margin-left: 16px;
+}
+
+.controls.nxt-btn
+{
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    margin-right: 16px;
+}
+
+
+/* scroll indication */
+.arrow-container{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+  
+  .arrow-1{
+    width: 100px;
+    height: 100px;
+    background: gray;
+    opacity: 0.5;
+    border-radius: 50%;
+    position: absolute;
+  }
+  
+  .arrow-2{
+    width: 60px;
+    height: 60px;
+    background: whitesmoke;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+    display: table;
+  }
+  
+  .arrow-2:before{
+    width: 52px;
+    height: 52px;
+    content: "";
+    border: 2px solid gray;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+  }
+  
+  .arrow-2 i.fa{
+    font-size: 30px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .arrow-2 i.fa img 
+  {
+    width: 20px;
+  }
+  
+  /* Custom Animate.css */
+  
+  .animated.hinge {
+    -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+  }
+  
+  
+  @keyframes zoomIn {
+    0% {
+      opacity: 0;
+      -webkit-transform: scale3d(.4, .4, .4);
+              transform: scale3d(.4, .4, .4);
+    }
+  
+    50% {
+      opacity: 0.5;
+    }
+    
+    100% {
+      opacity: 0;
+    }
+  }
+  
+  .zoomIn {
+            animation-name: zoomIn;
+            animation-iteration-count: infinite;
+  }
